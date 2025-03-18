@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   app:
-    image: laravel-img
+    image: dzaky8/laravel-img
     restart: unless-stopped
     container_name: laravel_app
     working_dir: /var/www/html
@@ -15,10 +15,10 @@ services:
     - APP_DEBUG=true
     depends_on:
     - db
-    command: >
-      bash -c "php artisan key:generate &&
-               php artisan config:clear &&
-               apache2-foreground "
+#    command: >
+#      bash -c "php artisan key:generate &&
+#               php artisan config:clear &&
+#               apache2-foreground "
   db:
     image: mysql:8.0
     container_name: laravel_db

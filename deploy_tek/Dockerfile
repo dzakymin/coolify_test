@@ -31,6 +31,8 @@ RUN composer install --no-dev --optimize-autoloader
 
 # Pastikan folder storage & bootstrap/cache ada, lalu atur permission
 RUN mkdir -p storage bootstrap/cache && chmod -R 777 storage bootstrap/cache
+#RUN php artisan config:clear 
+#RUN php artisan key:generate
 
 # Expose port Apache
 EXPOSE 80
