@@ -15,7 +15,10 @@ services:
     - APP_DEBUG=true
     depends_on:
     - db
-
+    command: >
+      bash -c "php artisan key:generate &&
+               php artisan config:clear &&
+               apache2-foreground "
   db:
     image: mysql:8.0
     container_name: laravel_db
